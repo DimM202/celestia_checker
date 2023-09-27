@@ -1,4 +1,5 @@
 import requests
+from time import sleep
 
 class Capsolver:
     def __init__(self, api_key, site_url, site_key, page_action='', min_score=0.9):
@@ -25,7 +26,8 @@ class Capsolver:
                 task_id = resp.json()['taskId']
                 return task_id
             except Exception as error:
-                print(f'ERROR getting task ID: {error}')
+                print(f'ERROR getting task ID: {resp.text}')
+                sleep(10)
 
 
     def get_captcha_solution(self, task_id):
@@ -42,3 +44,4 @@ class Capsolver:
                     return token
             except Exception as error:
                 print(f'ERROR getting captcha solution: {error}')
+                print(1)
