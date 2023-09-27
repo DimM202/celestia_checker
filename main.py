@@ -4,7 +4,7 @@ from time import sleep
 from config import *
 from modules.capsolver import Capsolver
 
-SITE_KEY = '6LdGZBonAAAAAE0mBBza18zR9usCiZo8BfHT7h24'
+SITE_KEY = '6LdapFooAAAAAD6Zv0lIfouRC5DrNHtsXK-I7elY'
 SITE_URL = 'https://genesis.celestia.org/'
 
 def read_txt(filepath):
@@ -27,6 +27,7 @@ def check_eligibility(address, captcha_solver):
             return eligible
         except Exception as error:
             print(f'ERROR checking eligibility: {error}')
+            sleep(3)
 
 
 def main():
