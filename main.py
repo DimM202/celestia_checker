@@ -4,7 +4,7 @@ from time import sleep
 from config import *
 from modules.capsolver import Capsolver
 
-SITE_KEY = '6LdapFooAAAAAD6Zv0lIfouRC5DrNHtsXK-I7elY'
+SITE_KEY = '6Lcx3V0oAAAAAJAXMNNDvwhIZI0wnZuM7-YjIIRx'
 SITE_URL = 'https://genesis.celestia.org/'
 
 def read_txt(filepath):
@@ -21,6 +21,7 @@ def check_eligibility(address, captcha_solver):
             slug = resp.json()['slug']
 
             if (slug == 'recaptcha-verification'):
+                print('ERROR: bad captcha token!')
                 continue
 
             eligible = True if (slug == 'eligible') else False

@@ -16,7 +16,7 @@ class Capsolver:
                 "type": "ReCaptchaV3TaskProxyLess",
                 "websiteURL": self.site_url,
                 "websiteKey": self.site_key,
-                "pageAction": "submit",
+                "pageAction": self.page_action,
                 "minScore": self.min_score,
             }
         }
@@ -44,4 +44,3 @@ class Capsolver:
                     return token
             except Exception as error:
                 print(f'ERROR getting captcha solution: {error}')
-                print(1)
